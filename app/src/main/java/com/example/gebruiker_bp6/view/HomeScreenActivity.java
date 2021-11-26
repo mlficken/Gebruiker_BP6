@@ -18,32 +18,38 @@ public class HomeScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
 
-        // Aangemaakte elementen uit view pakken
-        aquariums = findViewById(R.id.HomeScreen_Aquarium_Knop);
-        vissen = findViewById(R.id.HomeScreen_Vissen_Knop);
-        gegevens = findViewById(R.id.HomeScreen_Gegevens_Knop);
+        //Pakt velden uit XML
+        vulScherm();
 
+        //Pakt ingelogde gebruiker uit Intent
         gebruiker = getIntent().getExtras().getParcelable("gebruiker");
 
-        // Actie wanneer er op knop wordt geklikt
+        // Actie wanneer er op aquariums knop wordt geklikt
         aquariums.setOnClickListener(v -> {
             Intent i = new Intent(v.getContext(), AlleAquariumsOverzichtActivity.class);
             i.putExtra("gebruiker", gebruiker);
             startActivity(i);
         });
 
-        // Actie wanneer er op knop wordt geklikt
+        // Actie wanneer er op vissen knop wordt geklikt
         vissen.setOnClickListener(v -> {
             Intent i = new Intent(v.getContext(), VissenBeherenActivity.class);
             i.putExtra("gebruiker", gebruiker);
             startActivity(i);
         });
 
-        // Actie wanneer er op knop wordt geklikt
+        // Actie wanneer er op gegevens knop wordt geklikt
         gegevens.setOnClickListener(v -> {
             Intent i = new Intent(v.getContext(), MijnGegevensActivity.class);
             i.putExtra("gebruiker", gebruiker);
             startActivity(i);
         });
+    }
+
+    //Pakt velden uit XML
+    public void vulScherm(){
+        aquariums = findViewById(R.id.HomeScreen_Aquarium_Knop);
+        vissen = findViewById(R.id.HomeScreen_Vissen_Knop);
+        gegevens = findViewById(R.id.HomeScreen_Gegevens_Knop);
     }
 }

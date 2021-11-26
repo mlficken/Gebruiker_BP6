@@ -31,12 +31,16 @@ public class MijnGegevensActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mijn_gegevens);
 
+        //Pakt ingelogde gebruiker uit Intent
         gebruiker = getIntent().getExtras().getParcelable("gebruiker");
 
+        //Pakt velden uit XML
         vulScherm();
 
+        //Vult tekstvelden met gegevens gebruiker
         vulTekstVelden();
 
+        //Update Gebruiker
         opslaan.setOnClickListener(v ->{
             try {
                 updateGebruiker();

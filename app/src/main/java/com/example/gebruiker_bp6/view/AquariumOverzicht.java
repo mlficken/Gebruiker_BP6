@@ -41,10 +41,14 @@ public class AquariumOverzicht extends AppCompatActivity {
         aquariumID = findViewById(R.id.Overzicht_AquariumID);
         aquariumID.setText("Aquarium " + ga.getID());
 
+        //maakt tabellen aan
         maakTabellen();
+
+        //vult tabellen met gegevens uit database
         vulTabellen();
     }
 
+    //maakt tabellen aan
     public void maakTabellen(){
         graph_pH = findViewById(R.id.Overzicht_pHgraph);
         graphLicht = findViewById(R.id.Overzicht_Lichtgraph);
@@ -69,10 +73,12 @@ public class AquariumOverzicht extends AppCompatActivity {
         graphTemp.getViewport().setXAxisBoundsManual(false);
     }
 
+    //vult tabellen met gegevens uit database
     public void vulTabellen(){
         RequestParams params = new RequestParams();
         params.put("aquariumid", ga.getID());
 
+        //TODO FILTER OP DATUM
         DatabaseConnection.connect("metingen/readspecific?", params, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {

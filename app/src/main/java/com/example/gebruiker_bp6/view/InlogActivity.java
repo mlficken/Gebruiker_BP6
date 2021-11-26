@@ -1,6 +1,5 @@
 package com.example.gebruiker_bp6.view;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -25,20 +24,15 @@ import cz.msebera.android.httpclient.Header;
 public class InlogActivity extends AppCompatActivity {
     private EditText email, wachtwoord;
     private Button inloggen;
-    private Gebruiker ingelogdeGebruiker;
+    private Gebruiker ingelogdeGebruiker = new Gebruiker();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inlog);
 
-        ingelogdeGebruiker = new Gebruiker();
-
-        // Aangemaakte elementen uit view pakken
-        email = findViewById(R.id.Inlog_Email_EditText);
-        wachtwoord = findViewById(R.id.Inlog_Wachtwoord_EditText);
-        inloggen = findViewById(R.id.Inlog_Inloggen_Knop);
-        System.out.println("HALLO");
+        //Pakt velden uit XML
+        vulScherm();
 
         // Actie wanneer er op knop wordt geklikt
         inloggen.setOnClickListener(v -> {
@@ -46,12 +40,21 @@ public class InlogActivity extends AppCompatActivity {
             ingelogdeGebruiker.setEmail("hans@gmail.com");
             ingelogdeGebruiker.setWw("abcdefg");
             startHomeScreen(v);
-            System.out.println(ingelogdeGebruiker);
-            //login(this, v);
+
+            //TODO login activeren, 44-46 weg.
+            //login(v);
         });
     }
 
-    public void login(Context context, View v){
+    //Pakt velden uit XML
+    public void vulScherm(){
+        email = findViewById(R.id.Inlog_Email_EditText);
+        wachtwoord = findViewById(R.id.Inlog_Wachtwoord_EditText);
+        inloggen = findViewById(R.id.Inlog_Inloggen_Knop);
+    }
+
+    //Controleert login gegevens met database
+    public void login(View v){
         RequestParams params = new RequestParams();
         params.put("emailadres", email.getText().toString());
         params.put("wachtwoord", wachtwoord.getText().toString());
@@ -70,10 +73,10 @@ public class InlogActivity extends AppCompatActivity {
 
                     if (gebruiker.getEmail().equals(email.getText().toString()) && gebruiker.getWw().equals(wachtwoord.getText().toString())) {
                         ingelogdeGebruiker = gebruiker;
-                        Toast.makeText(context, "Ingelogd", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Ingelogd", Toast.LENGTH_LONG).show();
                         startHomeScreen(v);
                     } else {
-                        Toast.makeText(context, "Controleer inloggegevens", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Controleer inloggegevens", Toast.LENGTH_LONG).show();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -82,6 +85,7 @@ public class InlogActivity extends AppCompatActivity {
         });
     }
 
+    //Start volgende scherm en stuurt gebruiker mee
     public void startHomeScreen(View v){
         Intent i = new Intent(v.getContext(), HomeScreenActivity.class);
         i.putExtra("gebruiker", ingelogdeGebruiker);
