@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".view.MijnGegevensActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="#BBDEFD"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/Inlog_Titel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/appNaam"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
+        <TextView
+            android:id="@+id/Inlog_Welkom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/mijnGegevens"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:id="@+id/MijnGegevens_Email_Titel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/emailadres"
+            android:textColor="#000000" />
+
+        <Space
+            android:id="@+id/Space"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:backgroundTint="#000000" />
+
+        <EditText
+            android:id="@+id/MijnGegevens_Email_EditText"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#B3DFFF"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="textEmailAddress"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:id="@+id/MijnGegevens_Naam_Titel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/naam"
+            android:textColor="#000000" />
+
+        <Space
+            android:id="@+id/Space"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:backgroundTint="#000000"
+            tools:ignore="DuplicateIds" />
+
+        <EditText
+            android:id="@+id/MijnGegevens_Naam_EditText"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#B3DFFF"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="textPersonName" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:id="@+id/MijnGegevens_Wachtwoord_Titel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/wachtwoord"
+            android:textColor="#000000" />
+
+        <Space
+            android:id="@+id/Space"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:backgroundTint="#000000"
+            tools:ignore="DuplicateIds" />
+
+        <EditText
+            android:id="@+id/MijnGegevens_Wachtwoord_EditText"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#B3DFFF"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="textPassword" />
+
+        <Space
+            android:id="@+id/Space"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:backgroundTint="#000000"
+            tools:ignore="DuplicateIds" />
+
+        <Button
+            android:id="@+id/MijnGegevens_Opslaan_Knop"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="@string/opslaan" />
+    </LinearLayout>
+
+</LinearLayout>

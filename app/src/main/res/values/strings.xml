@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Smart Aquarium</string>
+
+    //Inlog
+    <string name="appNaam">Smart Aquarium</string>
+    <string name="welkom">Welkom!</string>
+    <string name="emailadres">E-mailadres</string>
+    <string name="wachtwoord">Wachtwoord</string>
+    <string name="inloggen">Inloggen</string>
+
+    //HomeScreen
+    <string name="aquariums">Overzicht Aquariums</string>
+    <string name="vissen">Vissen Beheren</string>
+    <string name="mijnGegevens">Mijn Gegevens</string>
+
+    //AlleAquariumsOverzicht
+    <string name="kiesAquarium">Kies het gewenste aquarium</string>
+
+    //MijnGegevens
+    <string name="naam">Naam</string>
+
+    //AquariumOverzicht
+    <string name="pHwaarde">pH-Waarde</string>
+    <string name="lichtWaarde">Licht Waarde</string>
+    <string name="temperatuurWaarde">Temperatuur</string>
+
+    //MijnGegevens
+    <string name="opslaan">Opslaan</string>
+
+
+    //VissenInAquarium
+    <string name="aantal">Aantal</string>
+    <string name="vissoort">Vissoort</string>
+
+</resources>

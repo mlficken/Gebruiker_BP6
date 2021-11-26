@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../../../layout/custom_preview.xml" value="0.23229166666666667" />
+        <entry key="../../../../layout/custom_preview.xml" value="0.5786458333333333" />
+        <entry key="app/src/main/res/drawable/ic_baseline_minimize_24.xml" value="0.40625" />
+        <entry key="app/src/main/res/layout/activity_alle_aquariums_overzicht.xml" value="0.43020833333333336" />
+        <entry key="app/src/main/res/layout/activity_aquarium_overzicht.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_home_screen.xml" value="0.45" />
+        <entry key="app/src/main/res/layout/activity_inlog.xml" value="0.44427083333333334" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3644251626898048" />
+        <entry key="app/src/main/res/layout/activity_mijn_gegevens.xml" value="0.38645833333333335" />
+        <entry key="app/src/main/res/layout/activity_vissen_beheren.xml" value="0.38645833333333335" />
+        <entry key="app/src/main/res/layout/activity_vissen_in_aquarium.xml" value="0.331640625" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

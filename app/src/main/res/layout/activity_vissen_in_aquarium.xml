@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".view.VissenInAquariumActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="#BBDEFD"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/VissenInAquarium_AquariumID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:id="@+id/VissenInAquarium_Soort_Titel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/vissoort"
+            android:textColor="#000000" />
+
+        <Space
+            android:id="@+id/Space"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:backgroundTint="#000000" />
+
+        <EditText
+            android:id="@+id/VissenInAquarium_Soort_EditText"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#B3DFFF"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="textEmailAddress"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:id="@+id/VissenInAquarium_Aantal_Titel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/aantal"
+            android:textColor="#000000" />
+
+        <Space
+            style="@string/wachtwoord"
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="83dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/VissenInAquarium_Min_Knop"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:elegantTextHeight="false"
+                android:gravity="center"
+                android:text="-"
+                android:textAlignment="gravity"
+                android:textAllCaps="false"
+                android:textIsSelectable="false"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <Space
+                style="@string/wachtwoord"
+                android:layout_width="15dp"
+                android:layout_height="5dp" />
+
+            <TextView
+                android:id="@+id/VissenInAquarium_Aantal_Hoeveelheid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="#000000" />
+
+            <Space
+                style="@string/wachtwoord"
+                android:layout_width="15dp"
+                android:layout_height="5dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/VissenInAquarium_Plus_Knop"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:elegantTextHeight="false"
+                android:gravity="center"
+                android:text="+"
+                android:textAlignment="gravity"
+                android:textAllCaps="false"
+                android:textIsSelectable="false"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <Button
+            android:id="@+id/VissenInAquarium_Opslaan_Knop"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="@string/opslaan" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <ListView
+            android:id="@+id/VissenInAquarium_Vissen_ListView"
+            android:layout_width="match_parent"
+            android:layout_height="293dp" />
+    </LinearLayout>
+
+</LinearLayout>
