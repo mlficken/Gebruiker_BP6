@@ -26,7 +26,7 @@ import cz.msebera.android.httpclient.Header;
 
 public class AquariumOverzicht extends AppCompatActivity {
     private GraphView graph_pH, graphLicht, graphTemp;
-    private TextView aquariumID;
+    private TextView aquariumID, stroomverbruik;
     private ArrayList<Meting> metingLijst;
     private GebruikerAquarium ga;
     private LineGraphSeries<DataPoint> series, series2, series3;
@@ -39,13 +39,33 @@ public class AquariumOverzicht extends AppCompatActivity {
         // Zet aquariumID bovenaan scherm
         ga = getIntent().getExtras().getParcelable("gebruikerAquarium");
         aquariumID = findViewById(R.id.Overzicht_AquariumID);
+        stroomverbruik = findViewById(R.id.Overzicht_TextView_Stroomverbruik);
         aquariumID.setText("Aquarium " + ga.getID());
+        vulStroomverbruik();
 
         //maakt tabellen aan
         maakTabellen();
 
         //vult tabellen met gegevens uit database
         vulTabellen();
+    }
+
+    public void vulStroomverbruik(){
+        RequestParams params = new RequestParams();
+        params.put("aquariumid", ga.getID());
+
+        //TODO FILTER OP DATUM
+        DatabaseConnection.connect("uitkomstmachinelearning/readspecific?", params, new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                try {
+                    JSONArray data = response.getJSONArray("data");
+                    parseStroomkosten(data);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
     //maakt tabellen aan
@@ -108,6 +128,18 @@ public class AquariumOverzicht extends AppCompatActivity {
                 series3.setThickness(5);
             }
         });
+    }
+
+    public void parseStroomkosten(JSONArray data) {
+        try {
+            for (int i = 0; i < data.length(); i++) {
+                JSONObject oneObject = data.getJSONObject(i);
+                stroomverbruik.setText("€" + oneObject.getInt("kosten"));
+            }
+        }
+        catch(JSONException e){
+            e.printStackTrace();
+        }
     }
 
     public void parseData(JSONArray data) {

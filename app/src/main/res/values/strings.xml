@@ -32,4 +32,7 @@
     <string name="aantal">Aantal</string>
     <string name="vissoort">Vissoort</string>
 
+
+    <string name="voorspeldStroomverbruik">Voorspeld stroomverbruik op maandbasis</string>
+
 </resources>
